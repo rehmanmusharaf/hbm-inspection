@@ -1,0 +1,19 @@
+{
+  "name": "hbm-inspection-system",
+  "version": "1.0.0",
+  "description": "HBM Car Inspection System - Full Stack Application",
+  "scripts": {
+    "install-all": "npm install --prefix frontend && npm install --prefix backend",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/server.js",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "render-build": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
