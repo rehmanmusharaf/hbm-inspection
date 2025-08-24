@@ -5,6 +5,8 @@ const helmet = require("helmet");
 const compression = require("compression");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
+const path = require("path");
+
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth.routes");
@@ -66,6 +68,13 @@ app.use("/api/inspectors", inspectorRoutes);
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({ status: "OK", message: "Server is running" });
+});
+
+// Serve React build
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
 app.use(errorHandler);
