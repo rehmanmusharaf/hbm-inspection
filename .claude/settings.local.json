@@ -12,7 +12,10 @@
       "Bash(node:*)",
       "Bash(true)",
       "Bash(npm run seed:admin:*)",
-      "Bash(del \"D:\\HBM Inspection\\car-inspection-system\\backend\\testAuth.js\")"
+      "Bash(del \"D:\\HBM Inspection\\car-inspection-system\\backend\\testAuth.js\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": [],
